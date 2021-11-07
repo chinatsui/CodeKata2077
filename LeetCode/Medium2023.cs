@@ -5,35 +5,33 @@
 
 namespace CodeKata2077.LeetCode
 {
-    using System.Linq;
+	using System.Linq;
 
-    class Medium2023
+    static class Medium2023
     {
 		/// <summary>
 		/// A straightforward solution is using backtrack or nested For loops, however the time complexity is O(N^2).
 		/// Below solution leverages the Dictionary to optimize the time complexity to O(N).
 		/// </summary>
-		public int NumOfPairs(string[] nums, string target)
+		public static int NumOfPairs(string[] nums, string target)
 		{
 			int pairs = 0;
-			var freqs = nums.GroupBy(num => num).ToDictionary(num => num.Key, num => num.Count()); ;
-
-			foreach (var (key, value) in freqs) 
+			var freqs = nums.GroupBy(num => num).ToDictionary(num => num.Key, num => num.Count());
+			foreach(var (left, lCount) in freqs) 
 			{
-				if (target.StartsWith(key)) 
+				if (target.StartsWith(left)) 
 				{
-					var rest = target[key.Length..];
-					if (freqs.TryGetValue(rest, out int rFreq)) 
+					var right = target[left.Length..];
+					if (freqs.TryGetValue(right, out int rCount))
 					{
-						if (rest == key) 
+						if (left == right) 
 						{
-							rFreq--;
+							rCount--;
 						}
-						pairs += value * rFreq;
+						pairs += lCount * rCount;
 					}
 				}
 			}
-
 			return pairs;
 		}
 	}

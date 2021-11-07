@@ -7,10 +7,15 @@ namespace CodeKata2077.LeetCode
 {
     using System;
 
-    class Easy2042
+    static class Easy2042
     {
-        public bool AreNumbersInAscending(string s) 
+        public static bool AreNumbersInAscending(string s) 
         {
+            if (string.IsNullOrEmpty(s)) 
+            {
+                return false;
+            }
+
             string[] subs = s.Split(' ', StringSplitOptions.None);
             int last = -1;
             foreach (string sub in subs)
