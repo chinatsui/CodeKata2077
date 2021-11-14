@@ -3,10 +3,10 @@
 // https://leetcode.com/problems/add-two-numbers/
 // ---------------------------------------------------------------------------
 
+using CodeKata2077.LeetCode.Entity;
+
 namespace CodeKata2077.LeetCode
 {
-    using CodeKata2077.LeetCode.Entity;
-
     class Medium2
     {
         public static ListNode AddTwoNumbers(ListNode l1, ListNode l2) 
@@ -29,17 +29,17 @@ namespace CodeKata2077.LeetCode
 
             if (l1 != null)
             {
-                cur.Next = HandleListNodeTail(carryNum, l1);
+                cur.Next = HandleTail(carryNum, l1);
             }
             else if (l2 != null) 
             {
-                cur.Next = HandleListNodeTail(carryNum, l2);
+                cur.Next = HandleTail(carryNum, l2);
             }
 
             return res.Next;
         }
 
-        private static ListNode HandleListNodeTail(int carryNum, ListNode node) 
+        private static ListNode HandleTail(int carryNum, ListNode node) 
         {
             ListNode res = new ListNode(), cur = res;
             while (node != null) 

@@ -3,10 +3,10 @@
 // https://leetcode.com/problems/check-if-numbers-are-ascending-in-a-sentence/
 // ---------------------------------------------------------------------------
 
+using System;
+
 namespace CodeKata2077.LeetCode
 {
-    using System;
-
     static class Easy2042
     {
         public static bool AreNumbersInAscending(string s) 

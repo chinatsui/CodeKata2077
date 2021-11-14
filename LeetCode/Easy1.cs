@@ -3,10 +3,10 @@
 // https://leetcode.com/problems/two-sum/
 // ---------------------------------------------------------------------------
 
+using System.Collections.Generic;
+
 namespace CodeKata2077.LeetCode
 {
-    using System.Collections.Generic;
-
     static class Easy1
     {
         public static int[] TwoSum(int[] nums, int target) 
