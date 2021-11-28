@@ -3,10 +3,22 @@ using CodeKata2077.Algorithm.DP;
 using CodeKata2077.LeetCode;
 using CodeKata2077.LeetCode.Entity;
 
-Runner.RunLevenshteinDistance();
+Runner.RunMedium1234();
+Console.ReadLine();
 
 static class Runner
 {
+    public static void RunMedium1234()
+    {
+        Utils.Show(Medium1234.BalancedString("ERERQQQQQQQQQQQQQQWWWWEE"));
+    }
+    public static void RunLevenshteinDistance()
+    {
+        string strA = "mitcmu";
+        string strB = "mtacnuss";
+        Utils.Show(LevenshteinDistance.Calculate(strA, strB));
+    }
+
     public static void RunEasy1() 
     {
         int[] nums = { 2, 7, 11, 15 };
@@ -32,13 +44,6 @@ static class Runner
         string[] nums = { "777", "7", "77", "77" };
         string target = "7777";
         Utils.Show(Medium2023.NumOfPairs(nums, target));
-    }
-
-    public static void RunLevenshteinDistance() 
-    {
-        string strA = "mitcmu";
-        string strB = "mtacnuss";
-        Utils.Show(LevenshteinDistance.Calculate(strA, strB));
     }
 }
 

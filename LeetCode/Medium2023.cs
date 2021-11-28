@@ -3,10 +3,10 @@
 // https://leetcode.com/problems/number-of-pairs-of-strings-with-concatenation-equal-to-target/
 // ---------------------------------------------------------------------------
 
+using System.Linq;
+
 namespace CodeKata2077.LeetCode
 {
-	using System.Linq;
-
     static class Medium2023
     {
 		/// <summary>
